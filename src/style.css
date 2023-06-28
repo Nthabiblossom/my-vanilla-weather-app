@@ -1,11 +1,22 @@
-h1 {
-}
-
-.weather-app {
+.weather-app-wrapper {
   max-width: 600px;
-  margin: 0 auto;
   margin: 30px auto;
+}
+.weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 10px;
+}
+.weather-temperature strong {
+  font-size: 60px;
+  font-weight: 450;
+  color: blue;
+  line-height: 1;
+}
+.weather-description {
+  position: relative;
+  top: +15px;
+}
+.units a {
+  text-decoration: none;
 }
