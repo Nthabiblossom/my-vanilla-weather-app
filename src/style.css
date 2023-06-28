@@ -15,8 +15,5 @@
 }
 .weather-description {
   position: relative;
-  top: +15px;
-}
-.units a {
-  text-decoration: none;
+  text-transform: capitalize;
 }
