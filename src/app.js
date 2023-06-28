@@ -36,8 +36,13 @@ function displayTemperature(response) {
   winsSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   let dateElement = document.querySelector("#date-time");
   dateElement.innerHTML = formatDate(response.data.time * 1000);
+  let iconElement = document.querySelector("#temperature-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
-
 let apiKey = "69fo350cf347a61tc6a94bf3497a464e";
 let city = "Pretoria";
 let unit = "metric";
