@@ -45,9 +45,9 @@
             <div class="weather-description" id="weather-description">
               Sunny
             </div>
-            <div class="row">
+            <div class="row justify-content-evenly">
               <div class="col-6">
-                <div class="d-flex temperature-icon">
+                <div class="temperature-icon">
                   <img
                     src=""
                     alt=""
@@ -57,17 +57,16 @@
                   <span class="weather-temperature">
                     <strong id="temperature">12</strong>
                   </span>
-                  <div class="units">
+                  <span class="units">
                     <a href="#" id="celsius-link" class="active">°C</a> |
                     <a href="#" id="fahrenheit-link">°F</a>
-                  </div>
+                  </span>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-6">
-                  <div>Humidity: <span id="humidity">73</span>%</div>
-                  <div>Wind: <span id="windSpeed">2</span> km/h</div>
-                </div>
+
+              <div class="col-6 humidity-wind">
+                <div>Humidity: <span id="humidity">73</span>%</div>
+                <div>Wind: <span id="windSpeed">2</span> km/h</div>
               </div>
             </div>
           </div>
