@@ -22,6 +22,11 @@
 .units {
   position: relative;
   top: -15px;
+}
+.celsius {
+  text-decoration: none;
+}
+.fahrenheit {
   text-decoration: none;
 }
 .humidity-wind {
