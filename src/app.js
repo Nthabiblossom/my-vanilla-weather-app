@@ -29,6 +29,7 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.city;
 
   let temperatureElement = document.querySelector("#temperature");
+  celsiusTemperature = response.data.temperature.current;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
@@ -59,6 +60,28 @@ function handleSubmit(event) {
   console.log(cityInputElement.value);
 }
 
+function displayFahreheitTemperature(event) {
+  event.preventDefault();
+  let fahreheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahreheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahreheitLink = document.querySelector("#fahrenheit-link");
+fahreheitLink.addEventListener("click", displayFahreheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 search("lisbon");
