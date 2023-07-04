@@ -33,3 +33,6 @@
   position: relative;
   top: +20px;
 }
+.weather-forecast {
+  text-align: center;
+}
