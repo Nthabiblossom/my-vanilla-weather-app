@@ -25,7 +25,7 @@ function formatDate(timestamp) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tues", "Wen", "Thu", "Fri", "Sat"];
+  let days = ["Mon", "Tues", "Wen", "Thu", "Fri", "Sat", "Sun"];
 
   return days[day];
 }
@@ -71,7 +71,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let apiKey = `69fo350cf347a61tc6a94bf3497a464e`;
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -111,7 +111,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
-  console.log(cityInputElement.value);
 }
 
 function displayFahreheitTemperature(event) {
