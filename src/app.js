@@ -22,6 +22,34 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row justify-content-evenly">`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="col-2">
+                  <span class="forecast-day">${day}</span> <br />
+                  <img
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                    alt=""
+                    width="50"
+                  />
+                  <br />
+
+                  <span class="forecast-max-temperature">25°</span
+                  ><span class="forecast-min-temperature">15°</span>
+                
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let descriptionElement = document.querySelector("#weather-description");
   descriptionElement.innerHTML = response.data.condition.description;
@@ -86,3 +114,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("lisbon");
+displayForecast();
